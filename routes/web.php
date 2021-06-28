@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EtudiantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
+//Route::get('/etudiant',[EtudiantController::class,"index"])->name('app_etudiant');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/etudiant',[EtudiantController::class,"index"])->name('app_etudiant');
+Route::middleware(['auth:sanctum', 'verified'])->get('/etudiant/create',[EtudiantController::class,"create"])->name('app_add_etudiant');
+Route::middleware(['auth:sanctum', 'verified'])->post('/etudiant/create',[EtudiantController::class,"store"])->name('app_ajouter_etudiant');
