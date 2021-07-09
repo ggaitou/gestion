@@ -120,6 +120,7 @@
                             </form>
                         </x-slot>
                     </x-jet-dropdown>
+					<a class="dropdown-item" href="{{route('admin.users.index')}}">Liste des Utilisateurs</a>
                 </div>
             </div>
 
